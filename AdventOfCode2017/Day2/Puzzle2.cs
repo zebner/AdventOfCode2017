@@ -9,7 +9,7 @@ namespace AdventOfCode2017.Puzzles
         public static void Part1()
         {
             var total = 0;
-            using (var stream = new StreamReader("Input/Puzzle2.txt"))
+            using (var stream = new StreamReader("Inputs/Puzzle2.txt"))
             {
                 string line;
                 while ((line = stream.ReadLine()) != null)
@@ -26,7 +26,7 @@ namespace AdventOfCode2017.Puzzles
         public static void Part2()
         {
             var total = 0;
-            using (var stream = new StreamReader("Input/Puzzle2.txt"))
+            using (var stream = new StreamReader("Inputs/Puzzle2.txt"))
             {
                 string line;
                 while ((line = stream.ReadLine()) != null)
@@ -39,12 +39,7 @@ namespace AdventOfCode2017.Puzzles
                             if (j == i)
                                 continue;
 
-                            if (digits[j] % digits[i] == 0)
-                            {
-                                total += (digits[j] / digits[i]);
-                            }
-
-                            if (digits[i] % digits[j] == 0)
+                            if (digits[j] % digits[i] == 0 || digits[i] % digits[j] == 0)
                             {
                                 total += (digits[j] / digits[i]);
                             }

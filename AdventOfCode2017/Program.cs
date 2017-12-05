@@ -1,8 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.Remoting.Channels;
 using AdventOfCode2017.Puzzles;
 
 namespace AdventOfCode2017
@@ -15,9 +11,21 @@ namespace AdventOfCode2017
             var playPuzzle = true;
             while (playPuzzle)
             {
-                PlayPuzzle();
-                Console.WriteLine("Press 1 to play another puzzle...");
-                playPuzzle = Console.ReadLine() == "1";
+                try
+                {
+                    PlayPuzzle();
+                }
+                catch (Exception ex)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(ex.Message);
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                finally
+                {
+                    Console.WriteLine("Press 1 to play another puzzle...");
+                    playPuzzle = Console.ReadLine() == "1";
+                }
             }
             Console.WriteLine("Done.");
             Console.ReadLine();
@@ -45,8 +53,16 @@ namespace AdventOfCode2017
                     Puzzle4.Part1();
                     Puzzle4.Part2();
                     break;
+                case "5":
+                    Puzzle5.Part1();
+                    Puzzle5.Part2();
+                    break;
+                case "6":
+                    Puzzle6.Part1();
+                    Puzzle6.Part2();
+                    break;
                 default:
-                    Console.WriteLine("That puzzle is not available yet.");
+                    throw new NotImplementedException("That puzzle is not available yet");
                     break;
             }
             Console.ForegroundColor = ConsoleColor.White;
