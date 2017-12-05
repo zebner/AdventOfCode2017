@@ -9,15 +9,12 @@ namespace AdventOfCode2017.Puzzles
         public static void Part1()
         {
             var total = 0;
-            using (var stream = new StreamReader("Inputs/Puzzle4.txt"))
+            var lines = File.ReadAllLines("Inputs/Puzzle4.txt");
+            foreach (var line in lines)
             {
-                string line;
-                while ((line = stream.ReadLine()) != null)
-                {
-                    var words = line.Split();
-                    if (words.Length == words.Distinct().Count())
-                        total++;
-                }
+                var words = line.Split();
+                if (words.Length == words.Distinct().Count())
+                    total++;
             }
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"Puzzle 4A answer is {total}");
@@ -26,17 +23,15 @@ namespace AdventOfCode2017.Puzzles
         public static void Part2()
         {
             var total = 0;
-            using (var stream = new StreamReader("Inputs/Puzzle4.txt"))
+            var lines = File.ReadAllLines("Inputs/Puzzle4.txt");
+            foreach (var line in lines)
             {
-                string line;
-                while ((line = stream.ReadLine()) != null)
-                {
-                    var words = line.Split().ToList();
-                    var sortedWords = words.Select(x => string.Concat(x.OrderBy(c => c))).ToList();
+                var words = line.Split().ToList();
+                var sortedWords = words.Select(x => string.Concat(x.OrderBy(c => c))).ToList();
 
-                    if (sortedWords.Count == sortedWords.Distinct().Count())
-                        total++;
-                }
+                if (sortedWords.Count == sortedWords.Distinct().Count())
+                    total++;
+
             }
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"Puzzle 4B answer is {total}");

@@ -9,15 +9,12 @@ namespace AdventOfCode2017.Puzzles
         public static void Part1()
         {
             var total = 0;
-            using (var stream = new StreamReader("Inputs/Puzzle2.txt"))
+            var lines = File.ReadAllLines("Inputs/Puzzle2.txt");
+            foreach(var line in lines)
             {
-                string line;
-                while ((line = stream.ReadLine()) != null)
-                {
-                    var digits = Array.ConvertAll(line.Split(), int.Parse);
-                    var range = digits.Max() - digits.Min();
-                    total += range;
-                }
+                var digits = Array.ConvertAll(line.Split(), int.Parse);
+                var range = digits.Max() - digits.Min();
+                total += range;
             }
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"Puzzle 2A answer is {total}");
@@ -26,23 +23,20 @@ namespace AdventOfCode2017.Puzzles
         public static void Part2()
         {
             var total = 0;
-            using (var stream = new StreamReader("Inputs/Puzzle2.txt"))
+            var lines = File.ReadAllLines("Inputs/Puzzle2.txt");
+            foreach(var line in lines)
             {
-                string line;
-                while ((line = stream.ReadLine()) != null)
+                var digits = Array.ConvertAll(line.Split(), int.Parse);
+                for (var i = 0; i < digits.Length; i++)
                 {
-                    var digits = Array.ConvertAll(line.Split(), int.Parse);
-                    for (var i = 0; i < digits.Length; i++)
+                    for (var j = 0; j < digits.Length; j++)
                     {
-                        for (var j = 0; j < digits.Length; j++)
-                        {
-                            if (j == i)
-                                continue;
+                        if (j == i)
+                            continue;
 
-                            if (digits[j] % digits[i] == 0 || digits[i] % digits[j] == 0)
-                            {
-                                total += (digits[j] / digits[i]);
-                            }
+                        if (digits[j] % digits[i] == 0 || digits[i] % digits[j] == 0)
+                        {
+                            total += (digits[j] / digits[i]);
                         }
                     }
                 }
