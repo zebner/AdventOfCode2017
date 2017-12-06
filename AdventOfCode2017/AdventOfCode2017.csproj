@@ -71,6 +71,9 @@
     <Content Include="Inputs\Puzzle5.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Inputs\Puzzle6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Puzzles\" />
