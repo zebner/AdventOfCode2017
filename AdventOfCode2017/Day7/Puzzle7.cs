@@ -41,6 +41,7 @@ namespace AdventOfCode2017.Puzzles
             var requiredWeightOfTower = siblings.First().TotalWeightOfTower();
             var requiredWeight = unbalancedDisc.Weight + (requiredWeightOfTower - unbalancedDisc.TotalWeightOfTower());
 
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"Puzzle 7B answer is {requiredWeight}");
         }
 

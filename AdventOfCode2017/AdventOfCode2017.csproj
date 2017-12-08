@@ -52,6 +52,7 @@
     <Compile Include="Day2\Puzzle2.cs" />
     <Compile Include="Day3\Puzzle3.cs" />
     <Compile Include="Day4\Puzzle4.cs" />
+    <Compile Include="Day8\Puzzle8.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -62,6 +63,7 @@
     <None Include="Day5\README.md" />
     <None Include="Day6\README.md" />
     <None Include="Day7\README.md" />
+    <None Include="Day8\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Inputs\Puzzle7.txt">
@@ -79,10 +81,11 @@
     <Content Include="Inputs\Puzzle6.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Inputs\Puzzle8.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Puzzles\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
