@@ -77,6 +77,10 @@ namespace AdventOfCode2017
                     Puzzle10.Part1();
                     Puzzle10.Part2();
                     break;
+                case "11":
+                    Puzzle11.Part1();
+                    Puzzle11.Part2();
+                    break;
                 default:
                     throw new NotImplementedException("That puzzle is not available yet");
                     break;
