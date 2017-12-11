@@ -1,53 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace AdventOfCode2017.Puzzles
 {
     public class Puzzle11
     {
+        private static int _xPos;
+        private static int _yPos;
+        private static int _zPos;
+
         public static void Part1()
         {
             var input = File.ReadAllText("Inputs/Puzzle11.txt").Split(',');
 
-            var xPos = 0;
-            var yPos = 0;
-            var zPos = 0;
-
             foreach (var movement in input)
-            {
-                switch (movement)
-                {
-                    case "n":
-                        yPos++;
-                        zPos--;
-                        break;
-                    case "ne":
-                        xPos++;
-                        zPos--;
-                        break;
-                    case "nw":
-                        yPos++;
-                        xPos--;
-                        break;
-                    case "s":
-                        yPos--;
-                        zPos++;
-                        break;
-                    case "se":
-                        yPos--;
-                        xPos++;
-                        break;
-                    case "sw":
-                        xPos--;
-                        zPos++;
-                        break;
-                }
-            }
+                Move(movement);
 
-            var distance = (Math.Abs(xPos) + Math.Abs(yPos) + Math.Abs(zPos)) / 2;
+            var distance = (Math.Abs(_xPos) + Math.Abs(_yPos) + Math.Abs(_zPos)) / 2;
 
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"Puzzle 11A answer is {distance}");
@@ -56,48 +25,50 @@ namespace AdventOfCode2017.Puzzles
         public static void Part2()
         {
             var input = File.ReadAllText("Inputs/Puzzle11.txt").Split(',');
-
-            var xPos = 0;
-            var yPos = 0;
-            var zPos = 0;
-
+            _xPos = 0;
+            _yPos = 0;
+            _zPos = 0;
             var distance = 0;
             foreach (var movement in input)
             {
-                switch (movement)
-                {
-                    case "n":
-                        yPos++;
-                        zPos--;
-                        break;
-                    case "ne":
-                        xPos++;
-                        zPos--;
-                        break;
-                    case "nw":
-                        yPos++;
-                        xPos--;
-                        break;
-                    case "s":
-                        yPos--;
-                        zPos++;
-                        break;
-                    case "se":
-                        yPos--;
-                        xPos++;
-                        break;
-                    case "sw":
-                        xPos--;
-                        zPos++;
-                        break;
-                }
-
-                distance = Math.Max(distance,(Math.Abs(xPos) + Math.Abs(yPos) + Math.Abs(zPos)) / 2);
+                Move(movement);
+                distance = Math.Max(distance,(Math.Abs(_xPos) + Math.Abs(_yPos) + Math.Abs(_zPos)) / 2);
             }
 
 
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"Puzzle 11A answer is {distance}");
+        }
+
+        private static void Move(string movement)
+        {
+            switch (movement)
+            {
+                case "n":
+                    _yPos++;
+                    _zPos--;
+                    break;
+                case "ne":
+                    _xPos++;
+                    _zPos--;
+                    break;
+                case "nw":
+                    _yPos++;
+                    _xPos--;
+                    break;
+                case "s":
+                    _yPos--;
+                    _zPos++;
+                    break;
+                case "se":
+                    _yPos--;
+                    _xPos++;
+                    break;
+                case "sw":
+                    _xPos--;
+                    _zPos++;
+                    break;
+            }
         }
 
     }
