@@ -37,7 +37,7 @@ namespace AdventOfCode2017.Puzzles
 
 
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 11A answer is {distance}");
+            Console.WriteLine($"Puzzle 11B answer is {distance}");
         }
 
         private static void Move(string movement)

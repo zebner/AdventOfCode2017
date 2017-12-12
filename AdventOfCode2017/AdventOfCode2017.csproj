@@ -49,6 +49,7 @@
     <Compile Include="Day9\Puzzle9.cs" />
     <Compile Include="Dayy10\Puzzle10.cs" />
     <Compile Include="Dayy11\Puzzle11.cs" />
+    <Compile Include="Dayy12\Puzzle12.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Day1\Puzzle1.cs" />
@@ -70,8 +71,12 @@
     <None Include="Day9\README.md" />
     <None Include="Dayy10\README.md" />
     <None Include="Dayy11\README.md" />
+    <None Include="Dayy12\README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Inputs\Puzzle12.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Inputs\Puzzle11.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
