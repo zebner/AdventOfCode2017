@@ -1,12 +1,12 @@
 ﻿using System;
+using System.CodeDom;
 
 namespace AdventOfCode2017.Puzzles
 {
     public class Puzzle3
     {
-        public static void Part1()
+        public static int Part1(int input)
         {
-            const int input = 325489;
             int totalSteps;
             var sqrt = (int)Math.Sqrt(input);
             if (sqrt % 2 == 0) //rings only start on odd numbers. find the lower one.
@@ -29,14 +29,12 @@ namespace AdventOfCode2017.Puzzles
                 totalSteps = distanceFromCenterOfRow + ring - 1;
             }
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 3 answer is {totalSteps}");
+            return totalSteps;
         }
 
-        public static void Part2()
+        public static string Part2(int input)
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Puzzle 3B not implemented. I just did this in excel...");
+            return "Puzzle 3B not implemented. I just did this in excel...";
         }
     }
 }

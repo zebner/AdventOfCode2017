@@ -7,21 +7,18 @@ namespace AdventOfCode2017.Puzzles
 {
     public class Puzzle7
     {
-        public static void Part1()
+        public static string Part1(string[] input)
         {
-            var input = File.ReadAllLines("Inputs/Puzzle7.txt");
             var allDiscs = new List<Disc>();
             CreateStructure(input, allDiscs);
 
             var topDisc = allDiscs.First(d => d.Parent == null);
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 7A answer is {topDisc.Name}");
+            return topDisc.Name;
         }
 
-        public static void Part2()
+        public static int Part2(string[] input)
         {
-            var input = File.ReadAllLines("Inputs/Puzzle7.txt");
             var allDiscs = new List<Disc>();
             CreateStructure(input, allDiscs);
 
@@ -41,8 +38,7 @@ namespace AdventOfCode2017.Puzzles
             var requiredWeightOfTower = siblings.First().TotalWeightOfTower();
             var requiredWeight = unbalancedDisc.Weight + (requiredWeightOfTower - unbalancedDisc.TotalWeightOfTower());
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 7B answer is {requiredWeight}");
+            return requiredWeight;
         }
 
         private static void CreateStructure(IEnumerable<string> input, ICollection<Disc> allDiscs)

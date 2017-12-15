@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using AdventOfCode2017.Puzzles;
 
 namespace AdventOfCode2017
@@ -35,63 +36,86 @@ namespace AdventOfCode2017
         {
             Console.WriteLine("Which puzzle do you want to play?");
             var input = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;;
             switch (input)
             {
                 case "1":
-                    Puzzle1.Part1();
-                    Puzzle1.Part2();
+                    var input1 = File.ReadAllText("Inputs/Puzzle1.txt");
+                    Console.WriteLine($"Puzzle 1A answer is {Puzzle1.Part1(input1)}");
+                    Console.WriteLine($"Puzzle 1B answer is {Puzzle1.Part2(input1)}");
                     break;
                 case "2":
-                    Puzzle2.Part1();
-                    Puzzle2.Part2();
+                    var input2 = File.ReadAllLines("Inputs/Puzzle2.txt");
+                    Console.WriteLine($"Puzzle 2A answer is {Puzzle2.Part1(input2)}");
+                    Console.WriteLine($"Puzzle 2B answer is {Puzzle2.Part2(input2)}");
                     break;
                 case "3":
-                    Puzzle3.Part1();
-                    Puzzle3.Part2();
+                    var input3 = 325489;
+                    Console.WriteLine($"Puzzle 3A answer is {Puzzle3.Part1(input3)}");
+                    Console.WriteLine($"Puzzle 3B answer is {Puzzle3.Part2(input3)}");
                     break;
                 case "4":
-                    Puzzle4.Part1();
-                    Puzzle4.Part2();
+                    var input4 = File.ReadAllLines("Inputs/Puzzle4.txt");
+                    Console.WriteLine($"Puzzle 4A answer is {Puzzle4.Part1(input4)}");
+                    Console.WriteLine($"Puzzle 4B answer is {Puzzle4.Part2(input4)}");
                     break;
                 case "5":
-                    Puzzle5.Part1();
-                    Puzzle5.Part2();
+                    var input5 = File.ReadAllLines("Inputs/Puzzle5.txt");
+                    Console.WriteLine($"Puzzle 4A answer is {Puzzle5.Part1(input5)}");
+                    Console.WriteLine($"Puzzle 4B answer is {Puzzle5.Part2(input5)}");
                     break;
                 case "6":
-                    Puzzle6.Part1();
-                    Puzzle6.Part2();
+                    var input6 = File.ReadAllText("Inputs/Puzzle6.txt");
+                    Console.WriteLine($"Puzzle 6A answer is {Puzzle6.Part1(input6)}");
+                    Console.WriteLine($"Puzzle 6B answer is {Puzzle6.Part2(input6)}");
                     break;
                 case "7":
-                    Puzzle7.Part1();
-                    Puzzle7.Part2();
+                    var input7 = File.ReadAllLines("Inputs/Puzzle7.txt");
+                    Console.WriteLine($"Puzzle 7A answer is {Puzzle7.Part1(input7)}");
+                    Console.WriteLine($"Puzzle 7B answer is {Puzzle7.Part2(input7)}");
                     break;
                 case "8":
-                    Puzzle8.Part1();
-                    Puzzle8.Part2();
+                    var input8 = File.ReadAllLines("Inputs/Puzzle8.txt");
+                    Console.WriteLine($"Puzzle 8A answer is {Puzzle8.Part1(input8)}");
+                    Console.WriteLine($"Puzzle 8B answer is {Puzzle8.Part2(input8)}");
                     break;
                 case "9":
-                    Puzzle9.Part1();
-                    Puzzle9.Part2();
+                    var input9 = File.ReadAllText("Inputs/Puzzle9.txt");
+                    Console.WriteLine($"Puzzle 9A answer is {Puzzle9.Part1(input9)}");
+                    Console.WriteLine($"Puzzle 9B answer is {Puzzle9.Part2(input9)}");
                     break;
                 case "10":
-                    Puzzle10.Part1();
-                    Puzzle10.Part2();
+                    var input10 = File.ReadAllText("Inputs/Puzzle10.txt");
+                    Console.WriteLine($"Puzzle 10A answer is {Puzzle10.Part1(input10)}");
+                    Console.WriteLine($"Puzzle 10B answer is {Puzzle10.Part2(input10)}");
                     break;
                 case "11":
-                    Puzzle11.Part1();
-                    Puzzle11.Part2();
+                    var input11 = File.ReadAllText("Inputs/Puzzle11.txt");
+                    Console.WriteLine($"Puzzle 11A answer is {Puzzle11.Part1(input11)}");
+                    Console.WriteLine($"Puzzle 11B answer is {Puzzle11.Part2(input11)}");
                     break;
                 case "12":
-                    Puzzle12.Part1();
-                    Puzzle12.Part2();
+                    var input12 = File.ReadAllLines("Inputs/Puzzle12.txt");
+                    Console.WriteLine($"Puzzle 12A answer is {Puzzle12.Part1(input12)}");
+                    Console.WriteLine($"Puzzle 12B answer is {Puzzle12.Part2(input12)}");
                     break;
                 case "13":
-                    Puzzle13.Part1();
-                    Puzzle13.Part2();
+                    var input13 = File.ReadAllLines("Inputs/Puzzle13.txt");
+                    Console.WriteLine($"Puzzle 13A answer is {Puzzle13.Part1(input13)}");
+                    Console.WriteLine($"Puzzle 13B answer is {Puzzle13.Part2(input13)}");
+                    break;
+                case "14":
+                    var input14 = File.ReadAllText("Inputs/Puzzle14.txt");
+                    Console.WriteLine($"Puzzle 14A answer is {Puzzle14.Part1(input14)}");
+                    Console.WriteLine($"Puzzle 14B answer is {Puzzle14.Part2(input14)}");
+                    break;
+                case "15":
+                    var input15 = File.ReadAllLines("Inputs/Puzzle15.txt");
+                    Console.WriteLine($"Puzzle 15A answer is {Puzzle15.Part1(input15)}");
+                    Console.WriteLine($"Puzzle 15B answer is {Puzzle15.Part2(input15)}");
                     break;
                 default:
                     throw new NotImplementedException("That puzzle is not available yet");
-                    break;
             }
             Console.ForegroundColor = ConsoleColor.White;
         }  

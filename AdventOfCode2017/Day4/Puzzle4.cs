@@ -6,25 +6,22 @@ namespace AdventOfCode2017.Puzzles
 {
     public class Puzzle4
     {
-        public static void Part1()
+        public static int Part1(string[] input)
         {
             var total = 0;
-            var lines = File.ReadAllLines("Inputs/Puzzle4.txt");
-            foreach (var line in lines)
+            foreach (var line in input)
             {
                 var words = line.Split();
                 if (words.Length == words.Distinct().Count())
                     total++;
             }
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 4A answer is {total}");
+            return total;
         }
 
-        public static void Part2()
+        public static int Part2(string[] input)
         {
             var total = 0;
-            var lines = File.ReadAllLines("Inputs/Puzzle4.txt");
-            foreach (var line in lines)
+            foreach (var line in input)
             {
                 var words = line.Split().ToList();
                 var sortedWords = words.Select(x => string.Concat(x.OrderBy(c => c))).ToList();
@@ -33,8 +30,7 @@ namespace AdventOfCode2017.Puzzles
                     total++;
 
             }
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 4B answer is {total}");
+            return total;
         }
     }
 }

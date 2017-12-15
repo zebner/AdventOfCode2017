@@ -51,6 +51,8 @@
     <Compile Include="Dayy11\Puzzle11.cs" />
     <Compile Include="Dayy12\Puzzle12.cs" />
     <Compile Include="Dayy13\Puzzle13.cs" />
+    <Compile Include="Dayy14\Puzzle14.cs" />
+    <Compile Include="Dayy15\Puzzle15.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Day1\Puzzle1.cs" />
@@ -74,8 +76,16 @@
     <None Include="Dayy11\README.md" />
     <None Include="Dayy12\README.md" />
     <None Include="Dayy13\README.md" />
+    <None Include="Dayy14\README.md" />
+    <None Include="Dayy15\README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Inputs\Puzzle15.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Puzzle14.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Inputs\Puzzle13.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -86,6 +96,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Inputs\Puzzle10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Puzzle1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Inputs\Puzzle7.txt">

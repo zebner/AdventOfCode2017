@@ -7,20 +7,17 @@ namespace AdventOfCode2017.Puzzles
 {
     public class Puzzle12
     {
-        public static void Part1()
+        public static int Part1(string[] input)
         {
-            var input = File.ReadAllLines("Inputs/Puzzle12.txt");
             var pipes = CreateConnections(input);
 
             var connectedToZero = pipes.Where(pipe => pipe.IsConnected("0", new List<string>())).ToList();
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 12A answer is {connectedToZero.Count}");
+            return connectedToZero.Count;
         }
 
-        public static void Part2()
+        public static int Part2(string[] input)
         {
-            var input = File.ReadAllLines("Inputs/Puzzle12.txt");
             var pipes = CreateConnections(input);
 
             var groups = 0;
@@ -31,8 +28,7 @@ namespace AdventOfCode2017.Puzzles
                 groups++;
             }
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 12B answer is {groups}");
+            return groups;
         }
 
         private static List<Pipe> CreateConnections(string[] input)

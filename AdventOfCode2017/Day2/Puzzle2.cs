@@ -6,25 +6,22 @@ namespace AdventOfCode2017.Puzzles
 {
     public class Puzzle2
     {
-        public static void Part1()
+        public static int Part1(string[] input)
         {
             var total = 0;
-            var lines = File.ReadAllLines("Inputs/Puzzle2.txt");
-            foreach(var line in lines)
+            foreach(var line in input)
             {
                 var digits = Array.ConvertAll(line.Split(), int.Parse);
                 var range = digits.Max() - digits.Min();
                 total += range;
             }
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 2A answer is {total}");
+            return total;
         }
 
-        public static void Part2()
+        public static int Part2(string[] input)
         {
             var total = 0;
-            var lines = File.ReadAllLines("Inputs/Puzzle2.txt");
-            foreach(var line in lines)
+            foreach(var line in input)
             {
                 var digits = Array.ConvertAll(line.Split(), int.Parse);
                 for (var i = 0; i < digits.Length; i++)
@@ -41,8 +38,7 @@ namespace AdventOfCode2017.Puzzles
                     }
                 }
             }
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 2B answer is {total}");
+            return total;
         }
     }
 }

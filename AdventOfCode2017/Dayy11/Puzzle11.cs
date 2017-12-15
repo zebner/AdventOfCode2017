@@ -9,35 +9,33 @@ namespace AdventOfCode2017.Puzzles
         private static int _yPos;
         private static int _zPos;
 
-        public static void Part1()
+        public static int Part1(string input)
         {
-            var input = File.ReadAllText("Inputs/Puzzle11.txt").Split(',');
+            var steps = input.Split(',');
 
-            foreach (var movement in input)
+            foreach (var movement in steps)
                 Move(movement);
 
             var distance = (Math.Abs(_xPos) + Math.Abs(_yPos) + Math.Abs(_zPos)) / 2;
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 11A answer is {distance}");
+            return distance;
         }
 
-        public static void Part2()
+        public static int Part2(string input)
         {
-            var input = File.ReadAllText("Inputs/Puzzle11.txt").Split(',');
+            var steps = input.Split(',');
             _xPos = 0;
             _yPos = 0;
             _zPos = 0;
             var distance = 0;
-            foreach (var movement in input)
+            foreach (var movement in steps)
             {
                 Move(movement);
                 distance = Math.Max(distance,(Math.Abs(_xPos) + Math.Abs(_yPos) + Math.Abs(_zPos)) / 2);
             }
 
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 11B answer is {distance}");
+            return distance;
         }
 
         private static void Move(string movement)

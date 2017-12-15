@@ -7,25 +7,23 @@ namespace AdventOfCode2017.Puzzles
 {
     public class Puzzle6
     {
-        public static void Part1()
+        public static int Part1(string input)
         {
-            var banks = Array.ConvertAll(File.ReadAllText("Inputs/Puzzle6.txt").Split(), int.Parse);
+            var banks = Array.ConvertAll(input.Split(), int.Parse);
             var usedConfigurations = new List<int[]>();
             Redistribute(usedConfigurations, banks);
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 6A answer is {usedConfigurations.Count}");
+            return usedConfigurations.Count;
         }
 
-        public static void Part2()
+        public static int Part2(string input)
         {
-            var banks = Array.ConvertAll(File.ReadAllText("Inputs/Puzzle6.txt").Split(), int.Parse);
+            var banks = Array.ConvertAll(input.Split(), int.Parse);
             var usedConfigurations = new List<int[]>();
             Redistribute(usedConfigurations, banks);
 
             var numInInfiniteLoop = usedConfigurations.Count - usedConfigurations.IndexOf(usedConfigurations.First(c => c.SequenceEqual(banks)));
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 6A answer is {numInInfiniteLoop}");
+            return numInInfiniteLoop;
         }
 
         private static void Redistribute(ICollection<int[]> usedConfigurations, IList<int> banks)

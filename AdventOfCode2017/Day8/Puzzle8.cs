@@ -6,9 +6,8 @@ namespace AdventOfCode2017.Puzzles
 {
     public class Puzzle8
     {
-        public static void Part1()
+        public static int Part1(string[] input)
         {
-            var input = File.ReadAllLines("Inputs/Puzzle8.txt");
             var nameValueDictionary = input.Select(i => i.Split().First().Trim()).Distinct().ToDictionary(x => x, x => 0);
             foreach (var instruction in input)
             {
@@ -24,14 +23,11 @@ namespace AdventOfCode2017.Puzzles
             }
 
             var maxValue = nameValueDictionary.Values.Max();
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 8A answer is {maxValue}");
+            return maxValue;
         }
 
-        public static void Part2()
+        public static int Part2(string[] input)
         {
-            var input = File.ReadAllLines("Inputs/Puzzle8.txt");
-
             var maxValue = 0;
             var nameValueDictionary = input.Select(i => i.Split().First().Trim()).Distinct().ToDictionary(x => x, x => 0);
             foreach (var instruction in input)
@@ -51,8 +47,7 @@ namespace AdventOfCode2017.Puzzles
             }
 
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 8B answer is {maxValue}");
+            return maxValue;
         }
 
         private static bool CheckCondition(int currentValue, int valueToCompare, string condition)

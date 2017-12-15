@@ -5,10 +5,10 @@ namespace AdventOfCode2017.Puzzles
 {
     public class Puzzle5
     {
-        public static void Part1()
+        public static int Part1(string[] input)
         {
             var total = 0;
-            var numbers = Array.ConvertAll(File.ReadAllLines("Inputs/Puzzle5.txt"), int.Parse);
+            var numbers = Array.ConvertAll(input, int.Parse);
             var currentPosition = 0;
             while (currentPosition < numbers.Length)
             {
@@ -17,14 +17,13 @@ namespace AdventOfCode2017.Puzzles
                 currentPosition += offset;
                 total++;
             }
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 5A answer is {total}");
+            return total;
         }
 
-        public static void Part2()
+        public static int Part2(string[] input)
         {
             var total = 0;
-            var numbers = Array.ConvertAll(File.ReadAllLines("Inputs/Puzzle5.txt"), int.Parse);
+            var numbers = Array.ConvertAll(input, int.Parse);
             var currentPosition = 0;
             while (currentPosition < numbers.Length)
             {
@@ -36,8 +35,7 @@ namespace AdventOfCode2017.Puzzles
                 currentPosition += offset;
                 total++;
             }
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 5B answer is {total}");
+            return total;
         }
     }
 }

@@ -5,9 +5,8 @@ namespace AdventOfCode2017.Puzzles
 {
     public class Puzzle9
     {
-        public static void Part1()
+        public static int Part1(string input)
         {
-            var input = File.ReadAllText("Inputs/Puzzle9.txt");
             var total = 0;
             var groupNumber = 0;
             var inGarbage = false;
@@ -44,13 +43,11 @@ namespace AdventOfCode2017.Puzzles
                 }
             }
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 9A answer is {total}");
+            return total;
         }
 
-        public static void Part2()
+        public static int Part2(string input)
         {
-            var input = File.ReadAllText("Inputs/Puzzle9.txt");
             var total = 0;
             var inGarbage = false;
             for (var i = 0; i < input.Length; i++)
@@ -75,8 +72,7 @@ namespace AdventOfCode2017.Puzzles
                         inGarbage = true;
             }
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 9B answer is {total}");
+            return total;
         }
 
     }

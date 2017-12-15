@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Microsoft.SqlServer.Server;
 
 namespace AdventOfCode2017.Puzzles
 {
@@ -10,25 +11,24 @@ namespace AdventOfCode2017.Puzzles
     {
         private static int _currentPosition;
         private static int _skipSize;
-        public static void Part1()
+        public static int Part1(string input)
         {
-            var input = Array.ConvertAll(File.ReadAllText("Inputs/Puzzle10.txt").Split(','),int.Parse);
+            var inputArray = Array.ConvertAll(input.Split(','),int.Parse);
 
             var elements = Enumerable.Range(0, 256).ToList();
-            elements = KnotHash(input, elements);
+            elements = KnotHash(inputArray, elements);
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 10A answer is {elements[0] * elements[1]}");
+            return elements[0] * elements[1];
         }
 
-        public static void Part2()
+        public static string Part2(string input)
         {
-            var input = Array.ConvertAll(File.ReadAllText("Inputs/Puzzle10.txt").ToCharArray(), x => (int)(byte)Convert.ToChar(x)).ToList();
-            input.Add(17);
-            input.Add(31);
-            input.Add(73);
-            input.Add(47);
-            input.Add(23);
+            var inputArray = Array.ConvertAll(input.ToCharArray(), x => (int)(byte)Convert.ToChar(x)).ToList();
+            inputArray.Add(17);
+            inputArray.Add(31);
+            inputArray.Add(73);
+            inputArray.Add(47);
+            inputArray.Add(23);
 
             _currentPosition = 0;
             _skipSize = 0;
@@ -36,18 +36,20 @@ namespace AdventOfCode2017.Puzzles
             var elements = Enumerable.Range(0, 256).ToList();
             for (var j = 0; j < 64; j++)
             {
-                elements = KnotHash(input, elements);
+                elements = KnotHash(inputArray, elements);
             }
 
             var denseHash = new StringBuilder();
             for (var i = 0; i < 16; i++)
             {
                 var value = elements.Skip(i * 16).Take(16).Aggregate(0, (current, num) => current ^ num);
-                denseHash.Append(value.ToString("X"));
+                var hex = value.ToString("X");
+                if (hex.Length == 1)
+                    hex = $"0{hex}";
+                denseHash.Append(hex);
             }
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 10B answer is {denseHash.ToString().ToLower()}");
+            return denseHash.ToString().ToLower();
         }
 
         private static List<int> KnotHash(IEnumerable<int> input, List<int> elements)

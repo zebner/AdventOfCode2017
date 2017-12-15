@@ -7,18 +7,14 @@ namespace AdventOfCode2017.Puzzles
 {
     public class Puzzle13
     {
-        public static void Part1()
+        public static int Part1(string[] input)
         {
-            var input = File.ReadAllLines("Inputs/Puzzle13.txt");
             var total = PassThrough(input, 0);
-
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 13A answer is {total}");
+            return total;
         }
 
-        public static void Part2()
+        public static int Part2(string[] input)
         {
-            var input = File.ReadAllLines("Inputs/Puzzle13.txt");
             var caught = true;
             var delay = 0;
             while (caught)
@@ -29,8 +25,7 @@ namespace AdventOfCode2017.Puzzles
                 delay++;
             }
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Puzzle 13B answer is {delay - 1}");
+            return delay - 1;
         }
 
         private static int PassThrough(IEnumerable<string> input, int delay)
