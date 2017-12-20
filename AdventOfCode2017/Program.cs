@@ -40,12 +40,12 @@ namespace AdventOfCode2017
             switch (input)
             {
                 case "1":
-                    var input1 = File.ReadAllText("Inputs/Puzzle1.txt");
+                    var input1 = File.ReadAllText("Inputs/Puzzle01.txt");
                     Console.WriteLine($"Puzzle 1A answer is {Puzzle1.Part1(input1)}");
                     Console.WriteLine($"Puzzle 1B answer is {Puzzle1.Part2(input1)}");
                     break;
                 case "2":
-                    var input2 = File.ReadAllLines("Inputs/Puzzle2.txt");
+                    var input2 = File.ReadAllLines("Inputs/Puzzle02.txt");
                     Console.WriteLine($"Puzzle 2A answer is {Puzzle2.Part1(input2)}");
                     Console.WriteLine($"Puzzle 2B answer is {Puzzle2.Part2(input2)}");
                     break;
@@ -55,32 +55,32 @@ namespace AdventOfCode2017
                     Console.WriteLine($"Puzzle 3B answer is {Puzzle3.Part2(input3)}");
                     break;
                 case "4":
-                    var input4 = File.ReadAllLines("Inputs/Puzzle4.txt");
+                    var input4 = File.ReadAllLines("Inputs/Puzzle04.txt");
                     Console.WriteLine($"Puzzle 4A answer is {Puzzle4.Part1(input4)}");
                     Console.WriteLine($"Puzzle 4B answer is {Puzzle4.Part2(input4)}");
                     break;
                 case "5":
-                    var input5 = File.ReadAllLines("Inputs/Puzzle5.txt");
+                    var input5 = File.ReadAllLines("Inputs/Puzzle05.txt");
                     Console.WriteLine($"Puzzle 4A answer is {Puzzle5.Part1(input5)}");
                     Console.WriteLine($"Puzzle 4B answer is {Puzzle5.Part2(input5)}");
                     break;
                 case "6":
-                    var input6 = File.ReadAllText("Inputs/Puzzle6.txt");
+                    var input6 = File.ReadAllText("Inputs/Puzzle06.txt");
                     Console.WriteLine($"Puzzle 6A answer is {Puzzle6.Part1(input6)}");
                     Console.WriteLine($"Puzzle 6B answer is {Puzzle6.Part2(input6)}");
                     break;
                 case "7":
-                    var input7 = File.ReadAllLines("Inputs/Puzzle7.txt");
+                    var input7 = File.ReadAllLines("Inputs/Puzzle07.txt");
                     Console.WriteLine($"Puzzle 7A answer is {Puzzle7.Part1(input7)}");
                     Console.WriteLine($"Puzzle 7B answer is {Puzzle7.Part2(input7)}");
                     break;
                 case "8":
-                    var input8 = File.ReadAllLines("Inputs/Puzzle8.txt");
+                    var input8 = File.ReadAllLines("Inputs/Puzzle08.txt");
                     Console.WriteLine($"Puzzle 8A answer is {Puzzle8.Part1(input8)}");
                     Console.WriteLine($"Puzzle 8B answer is {Puzzle8.Part2(input8)}");
                     break;
                 case "9":
-                    var input9 = File.ReadAllText("Inputs/Puzzle9.txt");
+                    var input9 = File.ReadAllText("Inputs/Puzzle09.txt");
                     Console.WriteLine($"Puzzle 9A answer is {Puzzle9.Part1(input9)}");
                     Console.WriteLine($"Puzzle 9B answer is {Puzzle9.Part2(input9)}");
                     break;
@@ -128,6 +128,11 @@ namespace AdventOfCode2017
                     var input18 = File.ReadAllLines("Inputs/Puzzle18.txt");
                     Console.WriteLine($"Puzzle 18A answer is {Puzzle18.Part1(input18)}");
                     Console.WriteLine($"Puzzle 18B answer is {Puzzle18.Part2(input18)}");
+                    break;
+                case "19":
+                    var input19 = File.ReadAllLines("Inputs/Puzzle19.txt");
+                    Console.WriteLine($"Puzzle 19A answer is {Puzzle19.Part1(input19)}");
+                    Console.WriteLine($"Puzzle 19B answer is {Puzzle19.Part2(input19)}");
                     break;
                 default:
                     throw new NotImplementedException("That puzzle is not available yet");

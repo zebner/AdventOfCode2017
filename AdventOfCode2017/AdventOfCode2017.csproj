@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,49 +44,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Day5\Puzzle5.cs" />
-    <Compile Include="Day6\Puzzle6.cs" />
-    <Compile Include="Day7\Puzzle7.cs" />
-    <Compile Include="Day9\Puzzle9.cs" />
-    <Compile Include="Dayy10\Puzzle10.cs" />
-    <Compile Include="Dayy11\Puzzle11.cs" />
-    <Compile Include="Dayy12\Puzzle12.cs" />
-    <Compile Include="Dayy13\Puzzle13.cs" />
-    <Compile Include="Dayy14\Puzzle14.cs" />
-    <Compile Include="Dayy15\Puzzle15.cs" />
-    <Compile Include="Dayy16\Puzzle16.cs" />
-    <Compile Include="Dayy17\Puzzle17.cs" />
-    <Compile Include="Dayy18\Puzzle18.cs" />
+    <Compile Include="Day05\Puzzle5.cs" />
+    <Compile Include="Day06\Puzzle6.cs" />
+    <Compile Include="Day07\Puzzle7.cs" />
+    <Compile Include="Day09\Puzzle9.cs" />
+    <Compile Include="Day10\Puzzle10.cs" />
+    <Compile Include="Day11\Puzzle11.cs" />
+    <Compile Include="Day12\Puzzle12.cs" />
+    <Compile Include="Day13\Puzzle13.cs" />
+    <Compile Include="Day14\Puzzle14.cs" />
+    <Compile Include="Day15\Puzzle15.cs" />
+    <Compile Include="Day16\Puzzle16.cs" />
+    <Compile Include="Day17\Puzzle17.cs" />
+    <Compile Include="Day18\Puzzle18.cs" />
+    <Compile Include="Day19\Puzzle19.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Day1\Puzzle1.cs" />
-    <Compile Include="Day2\Puzzle2.cs" />
-    <Compile Include="Day3\Puzzle3.cs" />
-    <Compile Include="Day4\Puzzle4.cs" />
-    <Compile Include="Day8\Puzzle8.cs" />
+    <Compile Include="Day01\Puzzle1.cs" />
+    <Compile Include="Day02\Puzzle2.cs" />
+    <Compile Include="Day03\Puzzle3.cs" />
+    <Compile Include="Day04\Puzzle4.cs" />
+    <Compile Include="Day08\Puzzle8.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Day1\README.md" />
-    <None Include="Day2\README.md" />
-    <None Include="Day3\README.md" />
-    <None Include="Day4\README.md" />
-    <None Include="Day5\README.md" />
-    <None Include="Day6\README.md" />
-    <None Include="Day7\README.md" />
-    <None Include="Day8\README.md" />
-    <None Include="Day9\README.md" />
-    <None Include="Dayy10\README.md" />
-    <None Include="Dayy11\README.md" />
-    <None Include="Dayy12\README.md" />
-    <None Include="Dayy13\README.md" />
-    <None Include="Dayy14\README.md" />
-    <None Include="Dayy15\README.md" />
-    <None Include="Dayy16\README.md" />
-    <None Include="Dayy17\README.md" />
-    <None Include="Dayy18\README.md" />
+    <None Include="Day01\README.md" />
+    <None Include="Day02\README.md" />
+    <None Include="Day03\README.md" />
+    <None Include="Day04\README.md" />
+    <None Include="Day05\README.md" />
+    <None Include="Day06\README.md" />
+    <None Include="Day07\README.md" />
+    <None Include="Day08\README.md" />
+    <None Include="Day09\README.md" />
+    <None Include="Day10\README.md" />
+    <None Include="Day11\README.md" />
+    <None Include="Day12\README.md" />
+    <None Include="Day13\README.md" />
+    <None Include="Day14\README.md" />
+    <None Include="Day15\README.md" />
+    <None Include="Day16\README.md" />
+    <None Include="Day17\README.md" />
+    <None Include="Day18\README.md" />
+    <None Include="Day19\README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Inputs\Puzzle19.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Inputs\Puzzle18.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -113,34 +119,32 @@
     <Content Include="Inputs\Puzzle10.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Inputs\Puzzle1.txt">
+    <Content Include="Inputs\Puzzle01.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Inputs\Puzzle7.txt">
+    <Content Include="Inputs\Puzzle07.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Inputs\Puzzle2.txt">
+    <Content Include="Inputs\Puzzle02.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Inputs\Puzzle4.txt">
+    <Content Include="Inputs\Puzzle04.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Inputs\Puzzle5.txt">
+    <Content Include="Inputs\Puzzle05.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Inputs\Puzzle6.txt">
+    <Content Include="Inputs\Puzzle06.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Inputs\Puzzle8.txt">
+    <Content Include="Inputs\Puzzle08.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Inputs\Puzzle9.txt">
+    <Content Include="Inputs\Puzzle09.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
