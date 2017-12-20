@@ -139,6 +139,11 @@ namespace AdventOfCode2017
                     Console.WriteLine($"Puzzle 20A answer is {Puzzle20.Part1(input20)}");
                     Console.WriteLine($"Puzzle 20B answer is {Puzzle20.Part2(input20)}");
                     break;
+                case "21":
+                    var input21 = File.ReadAllLines("Inputs/Puzzle21.txt");
+                    Console.WriteLine($"Puzzle 21A answer is {Puzzle21.Part1(input21)}");
+                    Console.WriteLine($"Puzzle 21B answer is {Puzzle21.Part2(input21)}");
+                    break;
                 default:
                     throw new NotImplementedException("That puzzle is not available yet");
             }

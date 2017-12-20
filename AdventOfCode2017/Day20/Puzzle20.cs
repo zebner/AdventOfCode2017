@@ -3,15 +3,13 @@ using System.Linq;
 
 namespace AdventOfCode2017.Puzzles
 {
-
-
     public class Puzzle20
     {
         public static int Part1(string[] input)
         {
             var allParticles = input.Select((t, i) => new Particle(t, i)).ToList();
 
-            for (var i = 0; i < 1000; i++)
+            for (var i = 0; i < 10000; i++)
             {
                 foreach (var particle in allParticles)
                 {
@@ -27,7 +25,7 @@ namespace AdventOfCode2017.Puzzles
         {
             var allParticles = input.Select((t, i) => new Particle(t, i)).ToList();
 
-            for (var i = 0; i < 1000; i++)
+            for (var i = 0; i < 10000; i++)
             {
                 foreach (var particle in allParticles)
                 {
@@ -57,15 +55,15 @@ namespace AdventOfCode2017.Puzzles
             ParticleNumber = particleNumber;
 
             var positionIndex = input.IndexOf("<");
-            var positionCoordinates = Array.ConvertAll(input.Substring(positionIndex + 1, input.IndexOf(">") - positionIndex - 1).Split(','), int.Parse);
+            var positionCoordinates = Array.ConvertAll(input.Substring(positionIndex + 1, input.IndexOf(">") - positionIndex - 1).Split(','), long.Parse);
             Position = new Point3D(positionCoordinates[0], positionCoordinates[1], positionCoordinates[2]);
 
             var velocityIndex = input.IndexOf("<", input.IndexOf("<") + 1);
-            var velocityCoordinates = Array.ConvertAll(input.Substring(velocityIndex + 1, input.IndexOf(">", input.IndexOf(">") + 1) - velocityIndex - 1).Split(','), int.Parse);
+            var velocityCoordinates = Array.ConvertAll(input.Substring(velocityIndex + 1, input.IndexOf(">", input.IndexOf(">") + 1) - velocityIndex - 1).Split(','), long.Parse);
             Velocity = new Point3D(velocityCoordinates[0], velocityCoordinates[1], velocityCoordinates[2]);
 
             var accelerationIndex = input.IndexOf("<", input.IndexOf("<", input.IndexOf("<") + 1) + 1);
-            var accelerationCoordinates = Array.ConvertAll(input.Substring(accelerationIndex + 1, input.IndexOf(">", input.IndexOf(">", input.IndexOf(">") + 1) + 1) - accelerationIndex - 1).Split(','), int.Parse);
+            var accelerationCoordinates = Array.ConvertAll(input.Substring(accelerationIndex + 1, input.IndexOf(">", input.IndexOf(">", input.IndexOf(">") + 1) + 1) - accelerationIndex - 1).Split(','), long.Parse);
             Acceleration = new Point3D(accelerationCoordinates[0], accelerationCoordinates[1], accelerationCoordinates[2]);
         }
 
@@ -87,10 +85,10 @@ namespace AdventOfCode2017.Puzzles
 
     public class Point3D
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int Z { get; set; }
-        public Point3D(int x, int y, int z)
+        public long X { get; set; }
+        public long Y { get; set; }
+        public long Z { get; set; }
+        public Point3D(long x, long y, long z)
         {
             X = x;
             Y = y;
