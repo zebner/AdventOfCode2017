@@ -53,6 +53,9 @@
     <Compile Include="Dayy13\Puzzle13.cs" />
     <Compile Include="Dayy14\Puzzle14.cs" />
     <Compile Include="Dayy15\Puzzle15.cs" />
+    <Compile Include="Dayy16\Puzzle16.cs" />
+    <Compile Include="Dayy17\Puzzle17.cs" />
+    <Compile Include="Dayy18\Puzzle18.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Day1\Puzzle1.cs" />
@@ -78,8 +81,20 @@
     <None Include="Dayy13\README.md" />
     <None Include="Dayy14\README.md" />
     <None Include="Dayy15\README.md" />
+    <None Include="Dayy16\README.md" />
+    <None Include="Dayy17\README.md" />
+    <None Include="Dayy18\README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Inputs\Puzzle18.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Puzzle17.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Puzzle16.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Inputs\Puzzle15.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -123,7 +138,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
