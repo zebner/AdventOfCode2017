@@ -60,6 +60,8 @@
     <Compile Include="Day19\Puzzle19.cs" />
     <Compile Include="Day20\Puzzle20.cs" />
     <Compile Include="Day21\Puzzle21.cs" />
+    <Compile Include="Day22\Puzzle22.cs" />
+    <Compile Include="Day23\Puzzle23.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Day01\Puzzle1.cs" />
@@ -91,8 +93,16 @@
     <None Include="Day19\README.md" />
     <None Include="Day20\README.md" />
     <None Include="Day21\README.md" />
+    <None Include="Day22\README.md" />
+    <None Include="Day23\README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Inputs\Puzzle23.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Puzzle22.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Inputs\Puzzle21.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

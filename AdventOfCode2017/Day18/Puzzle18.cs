@@ -33,13 +33,14 @@ namespace AdventOfCode2017.Puzzles
 
 
     }
-    internal class Duet
+    internal partial class Duet
     {
         private long _i;
-        private readonly IDictionary<string, long> _registers;
+        public readonly IDictionary<string, long> Registers;
         private readonly string[] _instructions;
 
         public int NumSends { get; private set; }
+        public long NumMul { get; set; } = 0;
 
         public Queue<long> SndQueue { get; } = new Queue<long>();
         public Queue<long> RcvQueue { get; set; } = new Queue<long>();
@@ -47,9 +48,9 @@ namespace AdventOfCode2017.Puzzles
         public Duet(int id, string[] input)
         {
             _instructions = input;
-            _registers = _instructions.Select(i => i.Split()[1]).Distinct().ToDictionary(x => x.ToString(), x => (long)0);
-            _registers.Remove("1");
-            _registers["p"] = id;
+            Registers = _instructions.Select(i => i.Split()[1]).Distinct().ToDictionary(x => x.ToString(), x => (long)0);
+            Registers.Remove("1");
+            Registers["p"] = id;
         }
 
         /// <summary>
@@ -66,25 +67,36 @@ namespace AdventOfCode2017.Puzzles
                         SndQueue.Enqueue(GetValue(parts[1]));
                         NumSends++;
                         break;
+                    case "sub":
+                        Registers[parts[1]] -= GetValue(parts[2]);
+                        break;
                     case "set":
-                        _registers[parts[1]] = GetValue(parts[2]);
+                        Registers[parts[1]] = GetValue(parts[2]);
                         break;
                     case "add":
-                        _registers[parts[1]] += GetValue(parts[2]);
+                        Registers[parts[1]] += GetValue(parts[2]);
                         break;
                     case "mul":
-                        _registers[parts[1]] *= GetValue(parts[2]);
+                        Registers[parts[1]] *= GetValue(parts[2]);
+                        NumMul++;
                         break;
                     case "mod":
-                        _registers[parts[1]] %= GetValue(parts[2]);
+                        Registers[parts[1]] %= GetValue(parts[2]);
                         break;
                     case "rcv":
                         if (RcvQueue.Count == 0)
                             return true;
-                        _registers[parts[1]] = RcvQueue.Dequeue();
+                        Registers[parts[1]] = RcvQueue.Dequeue();
                         break;
                     case "jgz":
                         if (GetValue(parts[1]) > 0)
+                        {
+                            _i += GetValue(parts[2]);
+                            continue;
+                        }
+                        break;
+                    case "jnz":
+                        if (GetValue(parts[1]) != 0)
                         {
                             _i += GetValue(parts[2]);
                             continue;
@@ -99,7 +111,7 @@ namespace AdventOfCode2017.Puzzles
 
         private long GetValue(string value)
         {
-            return _registers.ContainsKey(value) ? _registers[value] : long.Parse(value);
+            return Registers.ContainsKey(value) ? Registers[value] : long.Parse(value);
         }
 
     }
