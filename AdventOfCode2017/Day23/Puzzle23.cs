@@ -1,7 +1,4 @@
-﻿///// Got a lot of help from reddit user u/2BitSalute on this one.
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -159,6 +159,9 @@ namespace AdventOfCode2017
                     Console.WriteLine($"Puzzle 24A answer is {Puzzle24.Part1(input24)}");
                     Console.WriteLine($"Puzzle 24B answer is {Puzzle24.Part2(input24)}");
                     break;
+                case "25":
+                    Console.WriteLine($"Puzzle 25A answer is {Puzzle25.Part1()}");
+                    break;
                 default:
                     throw new NotImplementedException("That puzzle is not available yet");
             }
