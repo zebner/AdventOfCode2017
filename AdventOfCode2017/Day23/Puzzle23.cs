@@ -18,31 +18,12 @@ namespace AdventOfCode2017.Puzzles
 
         public static long Part2(string[] input)
         {
-            var a = 1;
-            var b = 0;
-            var c = 0;
-            var d = 0;
-            var e = 0;
-            var f = 0;
-            var g = 0;
             var h = 0;
-            b = 84;
-            c = b;
-
-            if (a != 0)
+            for (var b = 108400; b < 125400 + 1; b += 17)
             {
-                b *= 100;
-                b += 100000;
-                c = b;
-                c += 17000;
-            }
-            do
-            {
-                f = 1;
-                d = 2;
-                e = 2;
+                var f = 1;
 
-                for (d = 2; d < b; d++)
+                for (var d = 2; d < b; d++)
                 {
                     if (b % d != 0)
                         continue;
@@ -54,9 +35,29 @@ namespace AdventOfCode2017.Puzzles
                 {
                     h++;
                 }
-                g = b - c;
-                b += 17;
-            } while (g != 0);
+            }
+            /// disassembled a little more. h is just counting prime numbers between starting values of b and c
+            //do
+            //{
+            //    f = 1;
+            //    d = 2;
+            //    e = 2;
+
+            //    for (d = 2; d < b; d++) //from 2 to b (108400), increasing by 17 each loop
+            //    {
+            //        if (b % d != 0) //we are looking for any value d that is a factor of b. b is not prime
+            //            continue;
+
+            //        f = 0;
+            //        break; //b is prime, break out
+            //    }
+            //    if (f == 0) //if b was prime, increase h by 1
+            //    {
+            //        h++; //h counts all values between 108400 and c (125400)
+            //    }
+            //    g = b - c; //only break out when b = c. so we count from 108400 to 125400, skipping 17 each iteration
+            //    b += 17;
+            //} while (g != 0);
             return h;
         }
 
